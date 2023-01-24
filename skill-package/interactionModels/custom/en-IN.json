@@ -1,0 +1,258 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "diet coach",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "ColorIntent",
+          "slots": [
+            {
+              "name": "color",
+              "type": "AMAZON.Color"
+            }
+          ],
+          "samples": [
+            "i like {color}",
+            "{color}",
+            "My favourite color is {color}"
+          ]
+        },
+        {
+          "name": "CalBmiIntent",
+          "slots": [
+            {
+              "name": "age",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "i am {age} year\u0027s old",
+                "i am {age} ",
+                "my age is {age}"
+              ]
+            },
+            {
+              "name": "weight",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "i am {weight} pounds",
+                "i weigh {weight} ",
+                "i weigh {weight} pounds"
+              ]
+            },
+            {
+              "name": "height",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{height} inches",
+                "i am {height} inches tall",
+                "my height is {height}"
+              ]
+            }
+          ],
+          "samples": [
+            "bmi index",
+            "what is my bmi index",
+            "calculate my bmi index"
+          ]
+        },
+        {
+          "name": "UserGoalsIntent",
+          "slots": [
+            {
+              "name": "weight",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{weight} pounds",
+                "i want to loose {weight} pounds."
+              ]
+            },
+            {
+              "name": "months",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{months}",
+                "in {months} months",
+                "probably {months} months",
+                "{months} months"
+              ]
+            }
+          ],
+          "samples": [
+            "weight loss",
+            "my user goals"
+          ]
+        },
+        {
+          "name": "YesIntent",
+          "slots": [],
+          "samples": [
+            "yeah",
+            "sure",
+            "ok",
+            "yes"
+          ]
+        },
+        {
+          "name": "ReminderIntent",
+          "slots": [],
+          "samples": [
+            "set a reminder",
+            "reminder"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CalBmiIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "age",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1094649400740.392965217176"
+              }
+            },
+            {
+              "name": "weight",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.972322311884.456826026052"
+              }
+            },
+            {
+              "name": "height",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1420738432613.751291686110"
+              }
+            }
+          ]
+        },
+        {
+          "name": "UserGoalsIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "weight",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.795269120521.455322100050"
+              }
+            },
+            {
+              "name": "months",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.795269120521.596310302490"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1094649400740.392965217176",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what is your current age"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1420738432613.751291686110",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please tell me your height in inches?"
+          },
+          {
+            "type": "PlainText",
+            "value": "what is your height in inches?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.972322311884.456826026052",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "how much do you weigh in pounds?"
+          },
+          {
+            "type": "PlainText",
+            "value": "what is your weight in pounds?"
+          },
+          {
+            "type": "PlainText",
+            "value": "what is your current weight in pounds?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.795269120521.455322100050",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "how much weight do you want to loose"
+          },
+          {
+            "type": "PlainText",
+            "value": "how many pounds do you want to shed."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.795269120521.596310302490",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "in how many months do you want to shed this weight"
+          },
+          {
+            "type": "PlainText",
+            "value": "in how many months do you want to acheive this goal"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "20"
+}
